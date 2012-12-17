@@ -1,0 +1,462 @@
+# This is the character database for the Germanic Lexicon Project.  It
+# is used throughout the various subsystems.  As we discover new obscure
+# characters in the dictionaries, this database has to be kept
+# up-to-date.
+# 
+# 0: The code defined in terms of Unicode chars (these are not presently
+# normalized to any particular state of composition or decomposition)
+# 
+# 1: Entity name.  This is the standard entity name if one exists;
+# otherwise we invent an entity name according to certain rules
+# described on the project web pages
+# 
+# 2: The literal char itself, if the character exists in ISO-8859-1.  If
+# it doesn't exist in ISO-8859-1, then this field is empty.
+# 
+# 3: Character class (ASC, ISO, UNI, SJC; ASC = the character is in the
+# ASCII set; ISO = the character is in ISO-8859-1 Latin 1 but not in
+# ASCII; UNI = the character is in Unicode but not in ISO-8859-1; SJC =
+# the character isn't in Unicode.  Some of the characters in the SJC
+# category such as &thorn-bar; are in a late stage of the approval
+# process as of this writing)
+# 
+# 4: Y if entity name is a standard HTML entity name, N if it's one we
+# had to invent for the project.
+# 
+# 5: Y if we accept this char or entity as valid in our files, N if not.
+# There are some entities which are standard but which are unlikely to
+# ever occur in books on historical Germanic languages, such as the
+# Japanese &yen; symbol.  We could just leave these off the list, but it
+# can be convenient to have the whole ISO-8859-1 set in the file.
+# 
+# 6: The character with diacritics stripped off.  Only ASCII chars are
+# allowed in this column.  Some single characters have a two-character
+# substitution ( = ss; , = th).  This column is used for
+# "diacritics-off" matching in the search system.
+# 
+# 7: Typing equivalence (e.g. for web search form)
+# 
+# 8: This is used for project-internal typesetting, which involves the
+# use of TeX.  This shouldn't be considered a public field.  In some
+# cases, you could use the TeX code here as-is, but in other cases, the
+# TeX code contains project-internal macros which refer to specific
+# fonts, etc.  It would be too much work to support these definitions
+# for the public.
+#
+# 
+# Date: 15 Dec 2012. 
+# (This is the most recent date when the header was automatically copied
+# into this file, and the file was automatically copied to the public
+# web space.  It is not necessarily the most recent date that
+# modifications were made to the file.)
+
+U0022	&quot;	"	ASC	Y	Y			
+U0026	&amp;	&	ASC	Y	Y			\&{}
+U003C	&lt;	<	ASC	Y	Y			$<$
+U003E	&gt;	>	ASC	Y	Y			$>$
+U007E	&tilde;	~	ASC	N	Y			$\sim$
+U00A0	&nbsp;	 	ISO	Y	N			
+U00A1	&iexcl;	¡	ISO	Y	N			
+U00A2	&cent;	¢	ISO	Y	N			
+U00A3	&pound;	£	ISO	Y	Y			
+U00A4	&curren;	¤	ISO	Y	N			
+U00A5	&yen;	¥	ISO	Y	N			
+U00A6	&brvbar;	¦	ISO	Y	N			
+U00A7	&sect;	§	ISO	Y	Y			\S{}
+U00A8	&uml;	¨	ISO	Y	N			
+U00A9	&copy;	©	ISO	Y	N			
+U00AA	&ordf;	ª	ISO	Y	N			
+U00AB	&laquo;	«	ISO	Y	Y			$\ll$
+U00AC	&not;	¬	ISO	Y	N			
+U00AD	&shy;	­	ISO	Y	N			
+U00AE	&reg;	®	ISO	Y	N			
+U00AF	&macr;	¯	ISO	Y	N			
+U00B0	&deg;	°	ISO	Y	N			
+U00B1	&plusmn;	±	ISO	Y	N			
+U00B2	&sup2;	²	ISO	Y	N			
+U00B3	&sup3;	³	ISO	Y	N			
+U00B4	&acute;	´	ISO	Y	N			
+U00B5	&micro;	µ	ISO	Y	N			
+U00B6	&para;	¶	ISO	Y	Y			\P{}
+U00B7	&middot;	·	ISO	Y	N			
+U00B8	&cedil;	¸	ISO	Y	N			
+U00B9	&sup1;	¹	ISO	Y	N			
+U00BA	&ordm;	º	ISO	Y	N			
+U00BB	&raquo;	»	ISO	Y	Y			$\gg$
+U00BC	&frac14;	¼	ISO	Y	N			
+U00BD	&frac12;	½	ISO	Y	N			
+U00BE	&frac34;	¾	ISO	Y	N			
+U00BF	&iquest;	¿	ISO	Y	N			
+U00C0	&Agrave;	À	ISO	Y	Y	A	A`	\`A
+U00C1	&Aacute;	Á	ISO	Y	Y	A	A'	\'A
+U00C2	&Acirc;	Â	ISO	Y	Y	A	A^	\^A
+U00C3	&Atilde;	Ã	ISO	Y	Y	A	A~	\~A
+U00C4	&Auml;	Ä	ISO	Y	Y	A	A"	\"A
+U00C5	&Aring;	Å	ISO	Y	Y	A		{\AA}
+U00C6	&AElig;	Æ	ISO	Y	Y	AE	A+E	\AE{}
+U00C7	&Ccedil;	Ç	ISO	Y	Y	C		\c C
+U00C8	&Egrave;	È	ISO	Y	Y	E	E`	\`E
+U00C9	&Eacute;	É	ISO	Y	Y	E	E'	\'E
+U00CA	&Ecirc;	Ê	ISO	Y	Y	E	E^	\^E
+U00CB	&Euml;	Ë	ISO	Y	Y	E	E"	\"E
+U00CC	&Igrave;	Ì	ISO	Y	Y	I	I`	\`I
+U00CD	&Iacute;	Í	ISO	Y	Y	I	I'	\'I
+U00CE	&Icirc;	Î	ISO	Y	Y	I	I^	\^I
+U00CF	&Iuml;	Ï	ISO	Y	Y	I	I"	\"I
+U00D0	&ETH;	Ð	ISO	Y	Y	TH	D~	\ETH{}
+U00D1	&Ntilde;	Ñ	ISO	Y	Y	N	N~	\~N
+U00D2	&Ograve;	Ò	ISO	Y	Y	O	O`	\`O
+U00D3	&Oacute;	Ó	ISO	Y	Y	O	O'	\'O
+U00D4	&Ocirc;	Ô	ISO	Y	Y	O	O^	\^O
+U00D5	&Otilde;	Õ	ISO	Y	Y	O	O~	\~O
+U00D6	&Ouml;	Ö	ISO	Y	Y	O	O"	\"O
+U00D7	&times;	×	ISO	Y	Y			
+U00D8	&Oslash;	Ø	ISO	Y	Y	O	O/	\O{}
+U00D9	&Ugrave;	Ù	ISO	Y	Y	U	U`	\`U
+U00DA	&Uacute;	Ú	ISO	Y	Y	U	U'	\'U
+U00DB	&Ucirc;	Û	ISO	Y	Y	U	U^	\^U
+U00DC	&Uuml;	Ü	ISO	Y	Y	U	U"	\"U
+U00DD	&Yacute;	Ý	ISO	Y	Y	Y	Y'	\'Y
+U00DE	&THORN;	Þ	ISO	Y	Y	TH	T~	\THORN{}
+U00DF	&szlig;	ß	ISO	Y	Y	ss	s"	\ss{}
+U00E0	&agrave;	à	ISO	Y	Y	a	a`	\`a
+U00E1	&aacute;	á	ISO	Y	Y	a	a'	\'a
+U00E2	&acirc;	â	ISO	Y	Y	a	a^	\^a
+U00E3	&atilde;	ã	ISO	Y	Y	a	a~	\~a
+U00E4	&auml;	ä	ISO	Y	Y	a	a"	\"a
+U00E5	&aring;	å	ISO	Y	Y	a		\aa{}
+U00E6	&aelig;	æ	ISO	Y	Y	ae	a+e	\ae{}
+U00E7	&ccedil;	ç	ISO	Y	Y	c		\c c
+U00E8	&egrave;	è	ISO	Y	Y	e	e`	\`e
+U00E9	&eacute;	é	ISO	Y	Y	e	e'	\'e
+U00EA	&ecirc;	ê	ISO	Y	Y	e	e^	\^e
+U00EB	&euml;	ë	ISO	Y	Y	e	e"	\"e
+U00EC	&igrave;	ì	ISO	Y	Y	i	i`	\`{\i}
+U00ED	&iacute;	í	ISO	Y	Y	i	i'	\'{\i}
+U00EE	&icirc;	î	ISO	Y	Y	i	i^	\^{\i}
+U00EF	&iuml;	ï	ISO	Y	Y	i	i"	\"{\i}
+U00F0	&eth;	ð	ISO	Y	Y	th	d~	\eth{}
+U00F1	&ntilde;	ñ	ISO	Y	Y	n	n~	\~n
+U00F2	&ograve;	ò	ISO	Y	Y	o	o`	\`o
+U00F3	&oacute;	ó	ISO	Y	Y	o	o'	\'o
+U00F4	&ocirc;	ô	ISO	Y	Y	o	o^	\^o
+U00F5	&otilde;	õ	ISO	Y	Y	o	o~	\~o
+U00F6	&ouml;	ö	ISO	Y	Y	o	o"	\"o
+U00F7	&divide;	÷	ISO	Y	Y			
+U00F8	&oslash;	ø	ISO	Y	Y	o	o/	\o 
+U00F9	&ugrave;	ù	ISO	Y	Y	u	u`	\`u
+U00FA	&uacute;	ú	ISO	Y	Y	u	u'	\'u
+U00FB	&ucirc;	û	ISO	Y	Y	u	u^	\^u
+U00FC	&uuml;	ü	ISO	Y	Y	u	u"	\"u
+U00FD	&yacute;	ý	ISO	Y	Y	y	y'	\'y
+U00FE	&thorn;	þ	ISO	Y	Y	th	t~	{\thorn}
+U00FF	&yuml;	ÿ	ISO	Y	Y	y	y"	\"y
+-	&dash-uncertain;		SJC	N	Y			\uncertaindash{}
+-	&e-sub;		SJC	N	Y	e		\sub{e}
+-	&a-super;		SJC	N	Y	u		\super{u}
+-	&e-super;		SJC	N	Y	u		\super{e}
+-	&m-super;		SJC	N	Y	u		\super{m}
+-	&o-super;		SJC	N	Y	u		\super{o}
+-	&t-super;		SJC	N	Y	u		\super{t}
+-	&u-super;		SJC	N	Y	u		\super{u}
+-	&aolig;		SJC	N	Y	ao	a+o	\aolig{}
+-	&aolig-acute;		SJC	N	Y	ao	a+o	\aoligacute{}
+-	&thorn-bar;		SJC	N	Y			\thornbar{}
+-	&THORN-bar;		SJC	N	Y			\THORNbar{}
+U0061+U0301+U0328	&a-acute-hook;		UNI	N	Y	a	a',	\acutehook{a}
+U0061+U0304+U0301	&a-long-acute;		UNI	N	Y	a	a:'	\longacute{a}
+U0061+U0304+U0306	&a-long-short;		UNI	N	Y	a		\longshort{a}\relax{}
+U0061+U0307+U0301	&a-odot-acute;		UNI	N	Y	a		\odotacute{a}
+U0061+U0308+U0302	&a-uml-circ;		UNI	N	Y	a	a"^	\umlcirc{a}
+U0061+U0313	&a-ohook;		UNI	N	Y	a		\leftoverhook{a}
+U0062+U0303	&b-tilde;		UNI	N	Y	b	b~	\~{b}
+U0063+U030C+U0323	&c-hachek-udot;		UNI	N	Y	c		\hachekunderdot{c}
+U0063+U0303	&c-tilde;		UNI	N	Y	c	c~	\~c
+U0063+U0323	&c-udot;		UNI	N	Y	c		\d c
+U0065+U0301+U0328	&e-acute-hook;		UNI	N	Y	e	e',	\acutehook{e}
+U0065+U0302+U0301	&e-circ-acute;		UNI	N	Y	e	e^'	\circacute{e}
+U0065+U0303+U0328	&e-tilde-hook;		UNI	N	Y	e	e~,	\tildehook{e}
+U0065+U0304+U0306	&e-long-short;		UNI	N	Y	e		\longshort{e}\relax{}
+U0065+U0304+U0328	&e-long-hook;		UNI	N	Y	e	e:,	\longhook{e}
+U0065+U0307+U0301	&e-odot-acute;		UNI	N	Y	e		\odotacute{e}
+U0065+U0307+U0303	&e-odot-tilde;		UNI	N	Y	e		\odottilde{e}\relax{}
+U0065+U0308+U0301	&e-uml-acute;		UNI	N	Y	e	e"'	\umlacute{e}
+U0065+U0308+U0303	&e-uml-tilde;		UNI	N	Y	e	e"~	\umltilde{e}
+U0065+U0313	&e-ohook;		UNI	N	Y	e		\leftoverhook{e}
+U0067+U0304	&g-long;		UNI	N	Y	g	g:	\=g
+U0067+U0315	&g-ocomma;		UNI	N	Y	g		g'
+U0067+U0303	&g-tilde;		UNI	N	Y	g	g~	\~{g}
+U0068+U0303	&h-tilde;		UNI	N	Y	h	h~	\~{h}
+U0069+U0302+U0301	&i-circ-acute;		UNI	N	Y	i	i^'	\circacute{\i}\relax{}
+U0069+U0303+U0328	&i-tilde-hook;		UNI	N	Y	i	i~,	\tildehook{i}
+U0069+U0304+U0301	&i-long-acute;		UNI	N	Y	i	i:'	\longacute{\i}
+U0069+U0304+U0306	&i-long-short;		UNI	N	Y	i		\longshort{\i}\relax{}
+U0069+U030A	&i-oring;		UNI	N	Y	i		\ioring{}
+U0069+U030A+U0301	&i-oring-acute;		UNI	N	Y	i		\ioringacute{}
+U0069+U030A+U0303	&i-oring-tilde;		UNI	N	Y	i		\ioringtilde
+U0069+U032F	&i-nonsyllabic;		UNI	N	Y	i		\nonsyllabic{i}
+U006B+U0302	&k-circ;		UNI	N	Y	k	k^	\^k
+U006B+U0315	&k-ocomma;		UNI	N	Y	k		k'
+U006C+U0303	&l-tilde;		UNI	N	Y	l	l~	\~{l}
+U006C+U0315	&l-ocomma;		UNI	N	Y	l		l'
+U006C+U0325	&l-uring;		UNI	N	Y	l		\undercircle{l}
+U006D+U0303	&m-tilde;		UNI	N	Y	m	m~	\~m
+U006E+U0304	&m-long;		UNI	N	Y	m	m:	\=m
+U006D+U0325	&m-uring;		UNI	N	Y	m		\undercircle{m}
+U006E+U0303	&n-tilde;		UNI	N	Y	n	n~	\~n
+U006E+U0304	&n-long;		UNI	N	Y	n	n:	\=n
+U006E+U0315	&n-ocomma;		UNI	N	Y	n		n'
+U006E+U0325	&n-uring;		UNI	N	Y	n		\undercircle{n}
+U006F+U0301+U0328	&o-acute-hook;		UNI	N	Y	o	o',	\acutehook{o}
+U006F+U0302+U0301	&o-circ-acute;		UNI	N	Y	o	o^'	\circacute{o}
+U006F+U0302+U0328	&o-circ-hook;		UNI	N	Y	o	o^,	\circhook{o}
+U006F+U0304+U0301	&o-long-acute;		UNI	N	Y	o	o:'	\longacute{o}
+U006F+U0304+U0306	&o-long-short;		UNI	N	Y	o		\longshort{o}\relax{}
+U006F+U0308+U0302	&o-uml-circ;		UNI	N	Y	o	o"^	\umlcirc{o}
+U0070+U0303	&p-tilde;		UNI	N	Y	p	p~	\~{p}
+U0071+U0336	&q-bar;		UNI	N	Y	q		{\barredq}
+U0072+U0301+U0323	&r-acute-udot;		UNI	N	Y	r		\acuteunderdot{r}
+U0072+U0303	&r-tilde;		UNI	N	Y	r	r~	\~r
+U0072+U0304	&r-long;		UNI	N	Y	r	r:	\=r
+U0072+U0325	&r-uring;		UNI	N	Y	r		\undercircle{r}
+U0073+U0303	&s-tilde;		UNI	N	Y	s	s~	\~s
+U0073+U0315	&s-ocomma;		UNI	N	Y	s		s'
+U0074+U0315	&t-ocomma;		UNI	N	Y	t		t'
+U0075+U0302+U0301	&u-circ-acute;		UNI	N	Y	u	u^'	\circacute{u}
+U0075+U0304+U0301	&u-long-acute;		UNI	N	Y	u	u:'	\longacute{u}
+U0075+U0304+U0306	&u-long-short;		UNI	N	Y	u		\longshort{u}\relax{}
+U0075+U0307	&u-odot;		UNI	N	Y	u		\.u
+U0075+U0308+U0302	&u-uml-circ;		UNI	N	Y	u	u"^	\umlcirc{u}
+U0075+U030A+U0301	&u-oring-acute;		UNI	N	Y	u		\oringacute{u}\relax{}
+U0075+U030A+U0303	&u-oring-tilde;		UNI	N	Y	u		\oringtilde{u}
+U0075+U032F	&u-nonsyllabic;		UNI	N	Y	u		\nonsyllabic{u}
+U0076+U0304	&v-long;		UNI	N	Y	v	v:	\=v
+U0079+U0306	&y-short;		UNI	N	Y	y		\u y
+U007A+U0307	&z-odot;		UNI	N	Y	z		\.z
+U00D8+U0304	&O-slash-long;		UNI	N	Y	O	O/:	\={\O}
+U00E3	&a-tilde;		UNI	N	Y	a	a~	\~a
+U00E6+U0302	&aelig-circ;		UNI	N	Y	ae	a+e^	\^\ae\relax{}
+U00F8+U0304	&o-slash-long;		UNI	N	Y	o	o/:	\={\o}
+U0100	&A-long;		UNI	N	Y	A	A:	\={A}
+U0101	&a-long;		UNI	N	Y	a	a:	\=a
+U0102	&A-short;		UNI	N	Y	A		\u{A}
+U0103	&a-short;		UNI	N	Y	a		\u{a}
+U0105	&a-hook;		UNI	N	Y	a	a,	\rightunderhook{a}
+U0107	&c-acute;		UNI	N	Y	c	c'	\'c
+U010D	&c-hachek;		UNI	N	Y	c		\v c
+U0111	&d-bar;		UNI	N	Y	d		{\barredd}
+U0112	&E-long;		UNI	N	Y	E	E:	\={E}
+U0113	&e-long;		UNI	N	Y	e	e:	\=e
+U0115	&e-short;		UNI	N	Y	e		\u{e}
+U0117	&e-odot;		UNI	N	Y	e		\.e
+U0118	&E-hook;		UNI	N	Y	E	E,	\rightunderhook{E}
+U0119	&e-hook;		UNI	N	Y	e	e,	\rightunderhook{e}
+U011B	&e-hachek;		UNI	N	Y	e		\v e
+U011D	&g-circ;		UNI	N	Y	g	g^	\^g
+U0129	&i-tilde;		UNI	N	Y	i	i~	\~{\i}
+U012A	&I-long;		UNI	N	Y	I	I:	\={I}
+U012B	&i-long;		UNI	N	Y	i	i:	\={\i}
+U012D	&i-short;		UNI	N	Y	i		\u{\i}
+U012F	&i-hook;		UNI	N	Y	i	i,	\rightunderhook{i}
+U0137	&k-cedil;		UNI	N	Y	k		\c k
+U0142	&l-bar;		UNI	N	Y	l		\l{}
+U0144	&n-acute;		UNI	N	Y	n	n'	\'n
+U014C	&O-long;		UNI	N	Y	O	O:	\={O}
+U014D	&o-long;		UNI	N	Y	o	o:	\=o
+U014E	&O-short;		UNI	N	Y	O		\u{O}
+U014F	&o-short;		UNI	N	Y	o		\u{o}
+U0152	&OElig;		UNI	Y	Y	OE	O+E	\OE{}
+U0153	&oelig;		UNI	Y	Y	oe	o+e	\oe{}
+U0152+U0301	&OElig-acute;		UNI	N	Y	OE	O+E'	\'\OE{}
+U0153+U0301	&oelig-acute;		UNI	N	Y	oe	o+e'	\'\oe{}
+U0153+U0302	&oelig-circ;		UNI	N	Y	oe	o+e^	\^\oe{}
+U0159	&r-hachek;		UNI	N	Y	r		\v r
+U015B	&s-acute;		UNI	N	Y	s	s'	\'s
+U0161	&s-hachek;		UNI	N	Y	s		\v s
+U0169	&u-tilde;		UNI	N	Y	u	u~	\~u
+U016A	&U-long;		UNI	N	Y	U	U:	\={U}
+U016B	&u-long;		UNI	N	Y	u	u:	\=u
+U016D	&u-short;		UNI	N	Y	u		\u u
+U016F	&u-oring;		UNI	N	Y	u		\oring{u}
+U0175	&w-circ;		UNI	N	Y	w	w^	\^w
+U0177	&y-circ;		UNI	N	Y	y	y^	\^y
+U017E	&z-hachek;		UNI	N	Y	z		\v z
+U017F	&s-tall;		UNI	N	Y	s		\stall{}
+U0180	&b-bar;		UNI	N	Y	b		{\barredb}
+U0195	&hw;		UNI	N	Y	hw		{\gothichw}
+U01BF	&wynn;		UNI	N	Y	w		\wynn{}
+U01CE	&a-hachek;		UNI	N	Y	a		\v a
+U01D4	&u-hachek;		UNI	N	Y	u		\v u
+U01E2	&AElig-long;		UNI	N	Y	AE	A+E:	\=\AE\relax{}
+U01E3	&aelig-long;		UNI	N	Y	ae	a+e:	\=\ae\relax{}
+U01EA	&O-hook;		UNI	N	Y	O	O,	\rightunderhook{O}
+U01EB	&o-hook;		UNI	N	Y	o	o,	\rightunderhook{o}
+U01F0	&j-hachek;		UNI	N	Y	j		\v{\j}
+U01F5	&g-acute;		UNI	N	Y	g	g'	\'g
+U01FC	&AElig-acute;		UNI	N	Y	AE	A+E'	\'\AE{}
+U01FD	&aelig-acute;		UNI	N	Y	ae	a+e'	\'\ae{}
+U021C	&YOGH;		UNI	N	Y	G		\YOGH{}
+U021D	&yogh;		UNI	N	Y	g		\yogh{}
+U0225	&z-tail;		UNI	N	Y	z	z,	{\ztail}
+U0227	&a-odot;		UNI	N	Y	a		\.a
+U0232	&Y-long;		UNI	N	Y	Y	Y:	\={Y}
+U0233	&y-long;		UNI	N	Y	y	y:	\=y
+U0259	&schwa;		UNI	N	Y	e		\schwa{}
+U0280	&r-runic;		UNI	N	Y	r		\rsmallcapital{}
+U0391	&Alpha;		UNI	Y	Y	A		
+U0392	&Beta;		UNI	Y	Y	B		
+U0393	&Gamma;		UNI	Y	Y	G		
+U0394	&Delta;		UNI	Y	Y	D		
+U0395	&Epsilon;		UNI	Y	Y	E		
+U0396	&Zeta;		UNI	Y	Y	Z		
+U0397	&Eta;		UNI	Y	Y	H		
+U0398	&Theta;		UNI	Y	Y	Q		
+U0399	&Iota;		UNI	Y	Y	I		
+U039A	&Kappa;		UNI	Y	Y	K		
+U039B	&Lambda;		UNI	Y	Y	L		
+U039C	&Mu;		UNI	Y	Y	M		
+U039D	&Nu;		UNI	Y	Y	N		
+U039E	&Xi;		UNI	Y	Y	X		
+U039F	&Omicron;		UNI	Y	Y	O		
+U03A0	&Pi;		UNI	Y	Y	P		
+U03A1	&Rho;		UNI	Y	Y	R		
+U03A3	&Sigma;		UNI	Y	Y	S		
+U03A4	&Tau;		UNI	Y	Y	T		
+U03A5	&Upsilon;		UNI	Y	Y	U		
+U03A6	&Phi;		UNI	Y	Y	F		
+U03A7	&Chi;		UNI	Y	Y	C		
+U03A8	&Psi;		UNI	Y	Y	Y		
+U03A9	&Omega;		UNI	Y	Y	W		
+U03B1	&alpha;		UNI	Y	Y	a		{\GK{}a\RM{}}
+U03B2	&beta;		UNI	Y	Y	b		{\GK{}b\RM{}}
+U03B3	&gamma;		UNI	Y	Y	g		{\GK{}g\RM{}}
+U03B4	&delta;		UNI	Y	Y	d		\kern-.3em\GK{}d\RM{}
+U03B5	&epsilon;		UNI	Y	Y	e		\kern-.3em\GK{}e\RM{}
+U03B5+U0304	&epsilon-long;		UNI	N	Y	e		\longepsilon{}
+U03B6	&zeta;		UNI	Y	Y	z		{\GK{}z\RM{}}
+U03B7	&eta;		UNI	Y	Y	h		
+U03B8	&theta;		UNI	Y	Y	q		\kern-.3em\GK{}q\RM{}
+U03B9	&iota;		UNI	Y	Y	i		
+U03BA	&kappa;		UNI	Y	Y	k		
+U03BB	&lambda;		UNI	Y	Y	l		\kern-.3em\GK{}l\RM{}
+U03BC	&mu;		UNI	Y	Y	m		
+U03BD	&nu;		UNI	Y	Y	n		
+U03BE	&xi;		UNI	Y	Y	x		
+U03BF	&omicron;		UNI	Y	Y	o		
+U03C0	&pi;		UNI	Y	Y	p		
+U03C1	&rho;		UNI	Y	Y	r		
+U03C2	&sigmaf;		UNI	Y	Y	s		
+U03C3	&sigma;		UNI	Y	Y	s		
+U03C4	&tau;		UNI	Y	Y	t		
+U03C5	&upsilon;		UNI	Y	Y	u		
+U03C6	&phi;		UNI	Y	Y	f		
+U03C7	&chi;		UNI	Y	Y	c		\GK{}x\RM{}
+U03C8	&psi;		UNI	Y	Y	y		
+U03C9	&omega;		UNI	Y	Y	w		
+U03CA	&iota-diar;		UNI	N	Y	i		
+U0559	&left-half-ring;		UNI	N	Y	l		
+U1E0D	&d-udot;		UNI	N	Y	d		\d d
+U1E25	&h-udot;		UNI	N	Y	h		\d h
+U1E37	&l-udot;		UNI	N	Y	l		\d l
+U1E41	&m-odot;		UNI	N	Y	m		\.m
+U1E43	&m-udot;		UNI	N	Y	m		\d m
+U1E45	&n-odot;		UNI	N	Y	n		\.n
+U1E47	&n-udot;		UNI	N	Y	n		\d n
+U1E59	&r-odot;		UNI	N	Y	r		\.r
+U1E5B	&r-udot;		UNI	N	Y	r		\d r
+U1E63	&s-udot;		UNI	N	Y	s		\d s
+U1E6D	&t-udot;		UNI	N	Y	t		\d t
+U1E7F	&v-udot;		UNI	N	Y	v		\d v
+U1EA1	&a-udot;		UNI	N	Y	a		\d a
+U1EA5	&a-circ-acute;		UNI	N	Y	a	a^'	\circacute{a}
+U1EB9	&e-udot;		UNI	N	Y	e		\d e
+U1EBD	&e-tilde;		UNI	N	Y	e	e~	\~e
+U1EF9	&y-tilde;		UNI	N	Y	y	y~	\~y
+U1F00	&alpha-psili;		UNI	N	Y	a		
+U1F01	&alpha-dasia;		UNI	N	Y	a		
+U1F04	&alpha-dasia-oxia;		UNI	N	Y	a		
+U1F04	&alpha-psili-oxia;		UNI	N	Y	a		
+U1F08	&Alpha-psili;		UNI	N	Y	A		
+U1F09	&Alpha-dasia;		UNI	N	Y	A		
+U1F10	&epsilon-psili;		UNI	N	Y	e		
+U1F11	&epsilon-dasia;		UNI	N	Y	e		
+U1F14	&epsilon-psili-oxia;		UNI	N	Y	e		
+U1F15	&epsilon-dasia-oxia;		UNI	N	Y	e		
+U1F20	&eta-psili;		UNI	N	Y	h		
+U1F24	&eta-psili-oxia;		UNI	N	Y	h		
+U1F25	&eta-dasia-oxia;		UNI	N	Y	h		
+U1F26	&eta-psili-peri;		UNI	N	Y	h		
+U1F27	&eta-dasia-peri;		UNI	N	Y	h		
+U1F31	&iota-dasia;		UNI	N	Y	i		
+U1F34	&iota-psili-oxia;		UNI	N	Y	i		
+U1F35	&iota-dasia-oxia;		UNI	N	Y	i		
+U1F36	&iota-psili-peri;		UNI	N	Y	i		
+U1F37	&iota-dasia-peri;		UNI	N	Y	i		
+U1F40	&omicron-psili;		UNI	N	Y	o		
+U1F40+U0342	&omicron-psili-peri;		UNI	N	Y	o		
+U1F41	&omicron-dasia;		UNI	N	Y	o		
+U1F44	&omicron-psili-oxia;		UNI	N	Y	o		
+U1F45	&omicron-dasia-oxia;		UNI	N	Y	o		
+U1F50	&upsilon-psili;		UNI	N	Y	u		
+U1F51	&upsilon-dasia;		UNI	N	Y	u		
+U1F54	&upsilon-psili-oxia;		UNI	N	Y	u		
+U1F55	&upsilon-dasia-oxia;		UNI	N	Y	u		
+U1F56	&upsilon-psili-peri;		UNI	N	Y	u		
+U1F60	&omega-psili;		UNI	N	Y	w		
+U1F60+U0345	&omega-psili-ypo;		UNI	N	Y	w		
+U1F64	&omega-psili-oxia;		UNI	N	Y	w		
+U1F65	&omega-dasia-oxia;		UNI	N	Y	w		
+U1F66	&omega-psili-peri;		UNI	N	Y	w		
+U1F67	&omega-dasia-peri;		UNI	N	Y	w		
+U1F71	&alpha-oxia;		UNI	N	Y	a		
+U1F73	&epsilon-oxia;		UNI	N	Y	e		
+U1F74	&eta-dasia;		UNI	N	Y	h		
+U1F75	&eta-oxia;		UNI	N	Y	h		
+U1F77	&iota-oxia;		UNI	N	Y	i		
+U1F78	&omicron-varia;		UNI	N	Y	o		
+U1F79	&omicron-oxia;		UNI	N	Y	o		
+U1F7B	&upsilon-oxia;		UNI	N	Y	u		
+U1F7D	&omega-oxia;		UNI	N	Y	w		
+U1FB1	&alpha-long;		UNI	N	Y	a		
+U1FB1+U0301	&alpha-long-oxia;		UNI	N	Y	a		
+U1FB1+U0313+U0301	&alpha-long-psili-oxia;		UNI	N	Y	a		
+U1FB6	&alpha-peri;		UNI	N	Y	a		
+U1FC3	&eta-ypo;		UNI	N	Y	h		
+U1FC6	&eta-peri;		UNI	N	Y	h		
+U1FD1	&iota-long;		UNI	N	Y	i		
+U1FD1+U0301	&iota-long-oxia;		UNI	N	Y	i		
+U1FD1+U0313	&iota-long-psili;		UNI	N	Y	i		
+U1FD3	&iota-diar-oxia;		UNI	N	Y	i		
+U1FD6	&iota-peri;		UNI	N	Y	i		
+U1FD6	&iota-psili;		UNI	N	Y	i		
+U1FE1	&upsilon-long;		UNI	N	Y	u		
+U1FE1+U0301	&upsilon-long-oxia;		UNI	N	Y	u		
+U1FE1+U0314	&upsilon-long-dasia;		UNI	N	Y	u		
+U1FE3	&upsilon-diar-oxia;		UNI	N	Y	u		
+U1FE5	&rho-dasia;		UNI	N	Y	r		
+U1FE6	&upsilon-peri;		UNI	N	Y	u		
+U1FF3	&omega-ypo;		UNI	N	Y	w		
+U1FF6	&omega-peri;		UNI	N	Y	w		
+U1FF7	&omega-peri-ypo;		UNI	N	Y	w		
+U2013	&ndash;		UNI	Y	Y			\--{}
+U2014	&mdash;		UNI	Y	Y			\---{}
+U2014+U0301	&dash-acute;		UNI	N	Y			{\dashacute}
+U2018	&highquote;		UNI	N	Y			\highquote{}
+U201A	&lowquote;		UNI	N	Y			,
+U2022	&bull;		UNI	Y	Y			$\bullet$
+U2074	&sup4;		UNI	N	Y	4		\super{4}
+U261E	&hand;		UNI	N	Y			\hand{}
+U16A0	&f-rune;		UNI	N	Y			F-RUNE
+U16A2	&u-rune;		UNI	N	Y			U-RUNE
+U16B3	&c-rune;		UNI	N	Y			C-RUNE
+U16B9	&w-rune;		UNI	N	Y			W-RUNE
+U16BE	&n-rune;		UNI	N	Y			N-RUNE
+U16C1	&i-rune;		UNI	N	Y			I-RUNE
+U16C3	&y-rune;		UNI	N	Y			Y-RUNE
+U16C8	&p-rune;		UNI	N	Y			P-RUNE
+U16D2	&b-rune;		UNI	N	Y			B-RUNE
+U16D6	&e-rune;		UNI	N	Y			E-RUNE
+U16D7	&m-rune;		UNI	N	Y			M-RUNE
+U16DA	&l-rune;		UNI	N	Y			L-RUNE
+U16DC	&ng-rune;		UNI	N	Y			NG-RUNE
+U16DE	&d-rune;		UNI	N	Y			D-RUNE

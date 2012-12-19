@@ -201,7 +201,7 @@ U006C+U0303	&l-tilde;		UNI	N	Y	l	l~	\~{l}
 U006C+U0315	&l-ocomma;		UNI	N	Y	l		l'
 U006C+U0325	&l-uring;		UNI	N	Y	l		\undercircle{l}
 U006D+U0303	&m-tilde;		UNI	N	Y	m	m~	\~m
-U006E+U0304	&m-long;		UNI	N	Y	m	m:	\=m
+U006D+U0304	&m-long;		UNI	N	Y	m	m:	\=m
 U006D+U0325	&m-uring;		UNI	N	Y	m		\undercircle{m}
 U006E+U0303	&n-tilde;		UNI	N	Y	n	n~	\~n
 U006E+U0304	&n-long;		UNI	N	Y	n	n:	\=n
